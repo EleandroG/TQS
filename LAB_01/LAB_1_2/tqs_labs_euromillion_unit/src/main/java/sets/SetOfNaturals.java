@@ -33,7 +33,6 @@ public class SetOfNaturals implements Iterable<Integer> {
 		return newSet;
 	}
 
-
 	public int size() {
 		return this.collection.size();
 	}
