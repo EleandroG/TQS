@@ -36,5 +36,4 @@ public class TQSStack {
     public boolean isEmpty() {
         return stack.isEmpty();
     }
-
 }
