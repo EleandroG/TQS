@@ -63,7 +63,7 @@ public class SetOfNaturalsTest {
     public void equals() {
         int maxNumbers = 10;
 
-        setB = new SetOfNaturals(); //porque tem que ser um novo??
+        setB = new SetOfNaturals(); //porque o set b já está inicializado no @BeforeEach
         for(int i = 1; i < maxNumbers; i++) {
             setA.add(i);
             setB.add(i);
