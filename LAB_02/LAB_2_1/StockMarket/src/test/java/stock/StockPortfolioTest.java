@@ -19,9 +19,11 @@ import static org.mockito.Mockito.when;
 class StockPortfolioTest {
 
     //SuT --> System Under Test
+    //Create an instance of the subject under test (SuT) and use the mock to set the (remote) service instance.
     @InjectMocks
     private StockPortfolio portfolio;
 
+    //Prepare a mock to substitute the remote service (@Mock annotation)
     @Mock
     private ITStockMarket itStockMarket;
 
@@ -34,12 +36,14 @@ class StockPortfolioTest {
         portfolio.addStock(A);
         portfolio.addStock(B);
 
+        //Load the mock with the proper expectations (when...thenReturn)
         when(itStockMarket.getPrice("NIO")).thenReturn(100.0);
         when(itStockMarket.getPrice("HCMC")).thenReturn(200.0);
 
         double total = portfolio.getTotalValue();
         assertThat(total, equalTo(2500.0));
 
+        //Verify the result (assert) and the use of the mock (verify)
         //verifica que a função foi chamada 2 vezes
         verify(itStockMarket, Mockito.times(2)).getPrice(anyString());
     }

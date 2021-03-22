@@ -1,16 +1,17 @@
 package stock;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StockPortfolio {
 
     private String name;
-    List<Stock> stocks;
+    private List<Stock> stocks;
     private ITStockMarket itStockMarket;
 
     public StockPortfolio(String name, List<Stock> stocks) {
         this.name = name;
-        this.stocks = stocks;
+        this.stocks = new ArrayList<Stock>();
     }
 
     public ITStockMarket getMarketService() {
@@ -37,7 +38,7 @@ public class StockPortfolio {
         return total;
     }
 
-    public void addStock(Stock stock) {
-        this.stocks.add(stock);
+    public void addStock(Stock newStock) {
+        this.stocks.add(newStock);
     }
 }
