@@ -16,9 +16,9 @@ public class AddressResolver {
     private URIBuilder uriBuilder;
     private TqsHttpClient httpClient = new TqsHttpBasic();
 
-    public Address findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IOException, ParseException, org.json.simple.parser.ParseException {
+    public Address findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IOException, ParseException {
 
-        uriBuilder = new URIBuilder("http://open.mapquestapi.com/geocoding/v1/reverse");
+        uriBuilder = new URIBuilder("http://open.mapquestapi.com/geocoding/v1/reverse?key=uXSAVwYWbf9tJmsjEGHKKAo0gOjZfBLQ");
         uriBuilder.addParameter("location", (new Formatter()).format(Locale.US, "%.6f,%.6f", latitude, longitude).toString() );
         uriBuilder.addParameter("includeRoadMetadata", "true" );
 
@@ -37,6 +37,6 @@ public class AddressResolver {
         String city = (String) address.get("adminArea5");
         String state = (String) address.get("adminArea3");
         String zip = (String) address.get("postalCode");
-        return new Address(road, city, state, zip, null);
+        return new Address(null, road, city, state, zip);
     }
 }

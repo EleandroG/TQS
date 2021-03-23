@@ -21,11 +21,11 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "road='" + road + '\'' +
+                "houseNumber='" + houseNumber + '\'' +
+                ", road='" + road + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip='" + zip + '\'' +
-                ", houseNumber='" + houseNumber + '\'' +
                 '}';
     }
 
