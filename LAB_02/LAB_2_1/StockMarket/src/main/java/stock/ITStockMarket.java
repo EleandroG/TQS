@@ -2,6 +2,6 @@ package stock;
 
 public interface ITStockMarket {
 
-    double getPrice(String product);
+    double getPrice(String s);
     
 }

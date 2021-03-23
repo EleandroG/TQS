@@ -6,13 +6,8 @@ import java.util.List;
 public class StockPortfolio {
 
     private String name;
-    private List<Stock> stocks;
+    private List<Stock> stocks = new ArrayList<Stock>();
     private ITStockMarket itStockMarket;
-
-    public StockPortfolio(String name, List<Stock> stocks) {
-        this.name = name;
-        this.stocks = new ArrayList<Stock>();
-    }
 
     public ITStockMarket getMarketService() {
         return itStockMarket;
@@ -32,9 +27,9 @@ public class StockPortfolio {
 
     public double getTotalValue() {
         double total = 0;
-        for(int i = 0; i < this.stocks.size(); i++) {
-            total += this.itStockMarket.getPrice(this.stocks.get(i).getName());
-        }
+        for (Stock item: stocks){
+            total = total + (itStockMarket.getPrice(item.getName())*item.getQuantity());
+        };
         return total;
     }
 

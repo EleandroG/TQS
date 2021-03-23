@@ -1,10 +1,12 @@
 package stock;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -19,13 +21,16 @@ import static org.mockito.Mockito.when;
 class StockPortfolioTest {
 
     //SuT --> System Under Test
-    //Create an instance of the subject under test (SuT) and use the mock to set the (remote) service instance.
     @InjectMocks
     private StockPortfolio portfolio;
 
-    //Prepare a mock to substitute the remote service (@Mock annotation)
     @Mock
     private ITStockMarket itStockMarket;
+
+    @BeforeEach
+    public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+    }
 
     @Test
     void getTotalValue() {
