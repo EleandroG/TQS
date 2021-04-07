@@ -10,16 +10,16 @@ import com.toptal.webpages.DeveloperApplyPage;
 public class HomePage {
     private WebDriver driver;
 
-    @FindBy(xpath = "/html/body/main/div[3]/nav/div/ul/li[2]/a")
-    WebElement heading;
-
     //Page URL
     private static String PAGE_URL="https://www.toptal.com";
 
     //Locators
 
+    @FindBy( xpath = "//h1")
+    WebElement heading;
+
     //Apply as Developer Button
-    @FindBy(how = How.LINK_TEXT, using = "Apply as a Freelancer")
+    @FindBy(linkText = "Apply as a Freelancer")
     private WebElement developerApplyButton;
 
     //Constructor
