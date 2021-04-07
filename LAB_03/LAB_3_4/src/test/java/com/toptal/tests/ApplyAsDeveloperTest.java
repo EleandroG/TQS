@@ -6,14 +6,21 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class ApplyAsDeveloperTest {
-    WebDriver driver;
+    //WebDriver driver;
+    WebDriver driver = new ChromeDriver();
+
 
     @Before
     public void setup(){
@@ -28,17 +35,12 @@ public class ApplyAsDeveloperTest {
         HomePage home = new HomePage(driver);
         home.clickOnDeveloperApplyButton();
 
-        /*Create object of DeveloperPortalPage
-        DeveloperPortalPage devportal= new DeveloperPortalPage(driver);
-
-        //Check if page is opened
-        Assert.assertTrue(devportal.isPageOpened());
-
-        Click on Join Toptal
-        devportal.clikOnJoin();*/
-
         //Create object of DeveloperApplyPage
         DeveloperApplyPage applyPage =new DeveloperApplyPage(driver);
+
+        //Explicit Wait
+        WebElement firstResult = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"save_new_talent_create_applicant\"]")));
+        System.out.println(firstResult.getText());
 
         //Check if page is opened
         Assert.assertTrue(applyPage.isPageOpened());
