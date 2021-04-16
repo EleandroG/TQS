@@ -23,12 +23,17 @@ public class CarControllerTest {
     MockMvc servlet;
 
     @Test
-    public void getCarTest() throws Exception {
+    public void getCarByIdTest() throws Exception {
         given(carManagerService.getCarDetails(anyLong())).willReturn(new Car("Tesla", "Model S"));
 
         servlet.perform(MockMvcRequestBuilders.get("/cars/models"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("name").value("Model S"));
+    }
+
+    @Test
+    public void getAllCarsTest() throws Exception {
+        //por fazer
     }
 
 }
