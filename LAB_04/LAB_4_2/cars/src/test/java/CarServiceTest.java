@@ -31,6 +31,12 @@ public class CarServiceTest {
 
     @Test
     public void getAllCarsTest() throws Exception {
+        Iterable<Car> listCars = carRepository.findAll();
+        listCars.forEach(System.out::println);
+    }
+
+    @Test
+    public void saveCarsTest() throws Exception {
         //por fazer
     }
 }

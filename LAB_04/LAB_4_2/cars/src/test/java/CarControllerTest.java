@@ -36,4 +36,9 @@ public class CarControllerTest {
         //por fazer
     }
 
+    @Test
+    public void createCatTest() throws Exception {
+        //por fazer
+    }
+
 }
