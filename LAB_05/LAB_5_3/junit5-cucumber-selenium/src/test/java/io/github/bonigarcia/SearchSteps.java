@@ -34,32 +34,26 @@ public class SearchSteps {
 
     @When("I navigate to {string}")
     public void iNavigateTo(String url) {
-        //WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.get(url);
     }
 
-    /*@And("I type {string}")
-    public void iType(String searchQuery) {
-        webDriver.findElement(By.name("q")).sendKeys(searchQuery);
-    }*/
-
     @And("I press Find Flights")
     public void iPressFindFlights() {
-        webDriver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+        webDriver.findElement(By.xpath("/html/body/div[3]/form/div/input")).sendKeys(Keys.ENTER);
     }
 
-    /*@And("I press Enter")
+    @And("I press Enter")
     public void iPressEnter() {
-        webDriver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-    }*/
-
+        webDriver.findElement(By.xpath("/html/body/div[3]/form/div/input")).sendKeys(Keys.ENTER);
+    }
+    
     @Then("I should be shown results including {string}")
     public void iShouldBeShownResultsIncluding(String result) {
         try {
             webDriver.findElement(
-                    By.xpath("/html/body/div[3]/form/div/input"));
-                    //By.xpath("//*[contains(text(), '" + result + "')]"));
+                    By.xpath("/html/body/div[2]/h3"));
+
         } catch (NoSuchElementException e) {
             throw new AssertionError(
                     "\"" + result + "\" not available in results");
@@ -67,5 +61,4 @@ public class SearchSteps {
             webDriver.quit();
         }
     }
-
 }
