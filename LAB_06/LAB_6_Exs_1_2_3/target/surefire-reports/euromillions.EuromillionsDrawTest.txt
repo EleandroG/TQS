@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: euromillions.EuromillionsDrawTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in euromillions.EuromillionsDrawTest
+euromillions.EuromillionsDrawTest.testFindMatches()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "euromillions.CuponEuromillions.getDipByIndex(int)" because "this.sampleCuppon" is null
+	at euromillions.EuromillionsDrawTest.testFindMatches(EuromillionsDrawTest.java:26)
+
