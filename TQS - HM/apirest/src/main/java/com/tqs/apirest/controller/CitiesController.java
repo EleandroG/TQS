@@ -78,7 +78,7 @@ public class CitiesController {
                 temperature, humidity, pressure, wind);
         citiesRepository.save(cities);
 
-
+        incrementRequests();
         incrementStats();
         return cities;
     }
