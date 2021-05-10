@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Weather App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body,h1 {font-family: "Raleway", sans-serif}
+    body, html {height: 100%}
+    .bgimg {
+        background-image: url('https://wallpaperaccess.com/full/348840.jpg');
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+<body>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" style="font-size:25px; font-height: bold;">Weather WebApp: Air Quality</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/home}"> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/madrid}"> Madrid </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/valencia}"> Valencia <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/vigo}"> Vigo </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/valladolid}"> Valladolid </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/bilbao}"> Bilbao </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/corunha}"> Coruña </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+        </div>
+    </div>
+    <div class="w3-display-middle">
+        <h1 class="w3-jumbo w3-animate-top"> VALENCIA, SPAIN </h1>
+        <div class="row" style="font-size: 18px;">
+            <div class="col-md-7 mb-12">
+                <div class="card h-100">
+                    <div class="card-body" align="center">
+                        <ul>
+                            <li><b>Air Quality Information (AQI): </b><span th:text="${info.getAirQuality()}">-</span></li>
+                            <li><b>Ozone (O3): </b><span th:text="${info.getOzone()}">-</span><a> μg/m3 </a></li>
+                            <li><b>Nitrogen Dioxide (NO2): </b><span th:text="${info.getNitrogenDioxide()}">-</span><a> μg/m3 </a></li>
+                            <li><b>Sulfur Dioxide (SO2): </b><span th:text="${info.getSulfurDioxide()}">-</span><a> μg/m3 </a></li>
+                            <li><b>Carbon Monoxide (CO): </b><span th:text="${info.getCarbonMonoxide()}">-</span><a> μg/m3 </a></li>
+                            <li><b>Temperature: </b><span th:text="${info.getTemperature()}">-</span><a> ºC </a></li>
+                            <li><b>Pressure: </b><span th:text="${info.getPressure()}">-</span><a> μg/m3 </a></li>
+                            <li><b>Humidity: </b><span th:text="${info.getHumidity()}">-</span><a> μg/m3 </a></li>
+                            <li><b>Wind: </b><span th:text="${info.getWind()}">-</span><a> μg/m3 </a></li>
+                            <li><b>PM25: </b><span th:text="${info.getPm25()}">-</span><a> μg/m3 </a></li>
+                            <li><b>PM10: </b><span th:text="${info.getPm10()}">-</span><a> μg/m3 </a></li>
+                            <li><b><i>Measure timestamp: </i></b><span th:text="${info.getTimestamp()}">-</span></li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-display-bottomleft w3-padding-large">
+        Powered by <a href="https://waqi.info/pt/" target="_blank"> WAQI </a>
+    </div>
+</div>
+</body>
+</html>

@@ -54,7 +54,22 @@ class WebController {
         return "valladolid";
     }
 
-    //unidade das grandezas ug/m3 @€€‰˙ˇ†ıı†ııøøπ€£‰¶÷[]≠][÷¶‰£€@
-    //colocar o co?
+    //Bilbao
+    @RequestMapping(method = RequestMethod.GET, value = "/bilbao")
+    String mapa4(Model model) throws JsonProcessingException {
+        Cities request = citiesController.citiesByIdx((long) 6732);
+        model.addAttribute("info", request);
+        citiesController.incrementStats();
+        return "bilbao";
+    }
+
+    //Corunha
+    @RequestMapping(method = RequestMethod.GET, value = "/corunha")
+    String mapa5(Model model) throws JsonProcessingException {
+        Cities request = citiesController.citiesByIdx((long) 5754);
+        model.addAttribute("info", request);
+        citiesController.incrementStats();
+        return "corunha";
+    }
 
 }
