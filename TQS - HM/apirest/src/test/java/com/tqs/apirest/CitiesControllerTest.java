@@ -54,7 +54,7 @@ public class CitiesControllerTest {
             citiesController.incrementRequests();
             citiesController.incrementStats();
 
-            String stats = "Stats: " + CitiesController.stats;
+            String stats = "Stats (Number of times): " + CitiesController.stats;
             String statsFromApi = citiesController.getStats();
             assertEquals(stats, statsFromApi);
         }
