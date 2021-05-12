@@ -15,7 +15,7 @@ public class TestAppTest {
   private Map<String, Object> vars;
 
   JavascriptExecutor js;
-  
+
   @Before
   public void setUp() {
     driver = new ChromeDriver();
