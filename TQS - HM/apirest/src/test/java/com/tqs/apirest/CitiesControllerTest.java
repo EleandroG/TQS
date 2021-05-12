@@ -47,7 +47,7 @@ public class CitiesControllerTest {
             assertNotEquals(city.getId(), city1.getId());
         }
 
-        //Erro
+
         @Test
         public void stats() {
             CitiesController citiesController = new CitiesController();
