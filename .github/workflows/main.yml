@@ -23,7 +23,6 @@ jobs:
     environment:
       name: AQ
       url: localhost/8080/AirQuality/home
-      needs: build
     steps:
       - name: Run a one-line script
         run: echo Deploy AQ
@@ -34,7 +33,6 @@ jobs:
     environment:
       name: AQ1
       url: localhost/8080/AirQuality/home
-      needs: deploy-AQ
     steps:
       - name: Run a one-line script
         run: echo Deploy AQ1
@@ -45,7 +43,6 @@ jobs:
     environment:
       name: AQ2
       url: localhost/8080/AirQuality/home
-      needs: deploy-AQ1
     steps:
       - name: Run a one-line script
         run: echo Deploy AQ1
