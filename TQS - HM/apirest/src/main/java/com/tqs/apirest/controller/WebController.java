@@ -24,6 +24,7 @@ class WebController {
         Cities request = citiesController.citiesByIdx((long) 5725);
         model.addAttribute("info", request);
         citiesController.incrementStats();
+        citiesController.incrementRequests();
         return "madrid";
     }
 
@@ -33,6 +34,7 @@ class WebController {
         Cities request = citiesController.citiesByIdx((long) 6637);
         model.addAttribute("info", request);
         citiesController.incrementStats();
+        citiesController.incrementRequests();
         return "valencia";
     }
 
@@ -42,6 +44,7 @@ class WebController {
         Cities request = citiesController.citiesByIdx((long) 10027);
         model.addAttribute("info", request);
         citiesController.incrementStats();
+        citiesController.incrementRequests();
         return "vigo";
     }
 
@@ -51,6 +54,7 @@ class WebController {
         Cities request = citiesController.citiesByIdx((long) 11812);
         model.addAttribute("info", request);
         citiesController.incrementStats();
+        citiesController.incrementRequests();
         return "valladolid";
     }
 
@@ -60,6 +64,7 @@ class WebController {
         Cities request = citiesController.citiesByIdx((long) 6732);
         model.addAttribute("info", request);
         citiesController.incrementStats();
+        citiesController.incrementRequests();
         return "bilbao";
     }
 
@@ -69,6 +74,7 @@ class WebController {
         Cities request = citiesController.citiesByIdx((long) 5754);
         model.addAttribute("info", request);
         citiesController.incrementStats();
+        citiesController.incrementRequests();
         return "corunha";
     }
 

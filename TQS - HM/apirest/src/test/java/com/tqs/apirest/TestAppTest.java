@@ -1,7 +1,7 @@
 package com.tqs.apirest;
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.After;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,14 +16,14 @@ public class TestAppTest {
 
   JavascriptExecutor js;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     driver.quit();
   }
