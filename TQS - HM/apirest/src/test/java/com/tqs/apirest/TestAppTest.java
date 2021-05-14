@@ -41,5 +41,4 @@ public class TestAppTest {
     driver.findElement(By.linkText("Home")).click();
     driver.findElement(By.linkText("WAQI")).click();
   }
-
 }
