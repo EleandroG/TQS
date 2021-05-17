@@ -109,7 +109,7 @@ public class CitiesController {
                 api = apiData("Bilbao");
                 cache.setCache(api);
             } else if (idx == 5754) {
-                api = apiData("Coruña");
+                api = apiData("Corunha");
                 cache.setCache(api);
             } else {
                 api = apiData("Madrid");
